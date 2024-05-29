@@ -8,10 +8,10 @@ import {
   clearAllTodos,
 } from "./features/todoSlice";
 import "./index.css";
-// const { v4: uuidv4 } = require("uuid");
 
-// const uuid = uuidv4();
-// console.log(uuid);
+//images
+import iconSun from "./assets/icon-sun.svg";
+import iconMoon from "./assets/icon-moon.svg";
 function App() {
   const dispatch = useDispatch();
   const { todos } = useSelector((state) => state.todoState);
@@ -53,9 +53,7 @@ function App() {
   useEffect(() => {
     document.body.classList.toggle("dark-theme", isDarkTheme);
     if (iconRef.current) {
-      iconRef.current.src = isDarkTheme
-        ? "../public/assets/icon-sun.svg"
-        : "../public/assets/icon-moon.svg";
+      iconRef.current.src = isDarkTheme ? iconSun : iconMoon;
     }
     const cart = document.querySelector(".cart");
     if (cart) {
