@@ -12,6 +12,9 @@ import "./index.css";
 //images
 import iconSun from "./assets/icon-sun.svg";
 import iconMoon from "./assets/icon-moon.svg";
+import dark from "./assets/bg-desktop-dark.jpg";
+import light from "./assets/bg-desktop-light.jpg";
+
 function App() {
   const dispatch = useDispatch();
   const { todos } = useSelector((state) => state.todoState);
@@ -58,8 +61,8 @@ function App() {
     const cart = document.querySelector(".cart");
     if (cart) {
       cart.style.backgroundImage = isDarkTheme
-        ? 'url("../public/assets/bg-desktop-dark.jpg")'
-        : 'url("../public/assets/bg-desktop-light.jpg")';
+        ? `url(${dark})`
+        : `url(${light})`;
     }
   }, [isDarkTheme]);
 
